@@ -15,7 +15,14 @@ function inputChange(e){
     randomButton.addEventListener("click",randomFunction);
 
     function randomFunction(){
-        var textArrayDua=["a","b","c","d","e"];
+
+        var textArrayDua=[];
+
+        for(j=0;j<textArrayLength;j++){
+            textArrayDua.push(j);
+            // console.log(textArrayDua[j]);
+            // console.log(textArrayDua);
+        }
 
 
         for (i=0; i<textArrayLength; i++){
