@@ -2,9 +2,12 @@ var inputting=document.getElementById("inputting");
 var randomButton=document.getElementById("startRandomize");
 var result=document.getElementById("randomResult");
 
+
+
 inputting.addEventListener("change", inputChange);
 
 function inputChange(e){
+    var k=0;
     var text=e.target.value;
     var text2=text.replace(/[^a-zA-Z ]/g, "").trim();
     var textArray=text2.split("");
@@ -18,43 +21,87 @@ function inputChange(e){
 
         var textArrayDua=[];
 
-        for(j=0;j<textArrayLength;j++){
-            textArrayDua.push(j);
-            // console.log(textArrayDua[j]);
-            // console.log(textArrayDua);
-        }
+        // for(j=0;j<textArrayLength;j++){
+        //     textArrayDua.push(j);
+        //     // console.log(textArrayDua[j]);
+        //     // console.log(textArrayDua);
+        // }
+
+        // for(j=textArrayLength-1;j>=0;j--){
+        //     var randomNumber = Math.floor(Math.random() *j);
+        //     var newLetter = textArray[randomNumber];
+
+        //     textArrayDua[k]=newLetter;
+
+        //     console.log(randomNumber);
+        //     console.log(newLetter);
+        //     k=k+1;
+
+        //     console.log(k);
 
 
-        for (i=0; i<textArrayLength; i++){
-
-
-
-
-
-
-            // textArrayDua[i] = textArray[Math.floor(Math.random()*textArrayLength)];
-
-            var randomNumber = Math.floor(Math.random() * textArrayLength);
-            var newLetter = textArray[randomNumber];
-
-
-
-            textArrayDua[i]=textArray[Math.floor(Math.random()*textArrayLength)];
-            console.log(textArrayDua[i]);
-            console.log(textArrayDua);
             
-            // textArrayDua.push(newLetter);
+
+        // }
 
 
-            // console.log(Math.floor(Math.random()*textArrayLength));
-            // console.log("i is " + i);
-            // console.log(textArrayDua);
+            for (let i = textArray.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              const temp = textArray[i];
+              textArray[i] = textArray[j];
+              textArray[j] = temp;
+            }
+          
+
+        // for (i=0; i<textArrayLength; i++){
+
+            
+        //     var randomNumber = Math.floor(Math.random() * textArrayLength);
+        //     var newLetter = textArray[randomNumber];
+
+
+
+        //     textArrayDua[i]=textArray[Math.floor(Math.random()*textArrayLength)];
+        //     console.log(textArrayDua[i]);
+        //     console.log(textArrayDua);
+            
+
+
+
+        // }
+
+
+
+        // for (i=0; i<textArrayLength; i++){
+
+
+
+
+
+
+        //     // textArrayDua[i] = textArray[Math.floor(Math.random()*textArrayLength)];
+
+        //     var randomNumber = Math.floor(Math.random() * textArrayLength);
+        //     var newLetter = textArray[randomNumber];
+
+
+
+        //     textArrayDua[i]=textArray[Math.floor(Math.random()*textArrayLength)];
+        //     console.log(textArrayDua[i]);
+        //     console.log(textArrayDua);
+            
+        //     // textArrayDua.push(newLetter);
+
+
+        //     // console.log(Math.floor(Math.random()*textArrayLength));
+        //     // console.log("i is " + i);
+        //     // console.log(textArrayDua);
 
     
 
 
-            // var completeChar=char
-            // completeChar=completeChar+char;
+        //     // var completeChar=char
+        //     // completeChar=completeChar+char;
 
  
 
@@ -62,10 +109,10 @@ function inputChange(e){
 
 
 
-        }      
+        // }      
         // result.innerHTML=completeChar;  
 
-        result.innerHTML=textArrayDua;
+        result.innerHTML=textArray;
 
     }
 
